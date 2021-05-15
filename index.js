@@ -15,6 +15,7 @@ db.then(() => {
   console.log('Succesfully Connected to MongoDB!')
 })
 
+
 app.enable('trust proxy');
 
 app.use(cors());
