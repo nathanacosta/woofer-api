@@ -11,6 +11,6 @@
 	  { "src": "/.*", "dest": "index.js" }
 	],
 	"env": {
-	  "MONGO_URI": "@woofer-api"
+	  "MONGO_URI": "@woofer-db"
 	}
   }
