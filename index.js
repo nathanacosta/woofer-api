@@ -32,7 +32,7 @@ app.get('/test', (req, res) => {
   });
 });
 
-app.get('/woofs', (req, res, next) => {
+app.get('/woofs', cors(), (req, res, next) => {
   woofs
     .find()
     .then(woofs => {
@@ -40,7 +40,7 @@ app.get('/woofs', (req, res, next) => {
     }).catch(next);
 });
 
-app.get('/v2/woofs', (req, res, next) => {
+app.get('/v2/woofs', cors(), (req, res, next) => {
   // let skip = Number(req.query.skip) || 0;
   // let limit = Number(req.query.limit) || 10;
   let { skip = 0, limit = 5, sort = 'desc' } = req.query;
