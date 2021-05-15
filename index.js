@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const monk = require('monk');
@@ -10,6 +11,10 @@ const db = monk(process.env.MONGO_URI || 'localhost/woofer');
 const woofs = db.get('woofs');
 const filter = new Filter();
 
+db.then(() => {
+  console.log('Succesfully Connected to MongoDB!')
+})
+
 app.enable('trust proxy');
 
 app.use(cors());
@@ -18,6 +23,12 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.json({
     message: 'Woofer! 🐶'
+  });
+});
+
+app.get('/test', (req, res) => {
+  res.json({
+    message: 'Woof Woof! 🐶❤'
   });
 });
 

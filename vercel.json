@@ -1,6 +1,6 @@
 {
 	"name": "woofer-api",
-	"version": 2,
+	"version": 2.5,
 	"builds": [
 	  {
 		"src": "index.js",
